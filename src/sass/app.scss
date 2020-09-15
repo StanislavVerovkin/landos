@@ -1,0 +1,11 @@
+@import "mixins";
+@import "fonts";
+@import "variables";
+@import "grid";
+@import "common";
+
+@import "parts/background";
+
+body {
+  background-color: black;
+}

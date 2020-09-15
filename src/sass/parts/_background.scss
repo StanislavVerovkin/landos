@@ -1,0 +1,64 @@
+@import "../variables";
+@import "../mixins";
+
+.background {
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+  position: absolute;
+}
+
+.logo {
+  width: 150px;
+  margin-top: 43px;
+}
+
+.content {
+  //margin-top: 100px;
+  //margin-bottom: 100px;
+  @include font(16px, 400, 'Rubik');
+
+  &__date {
+    margin: 60px 0 10px 0;
+    color: $color-text;
+    @include font(12px, 600);
+  }
+
+  &__title {
+    @include font(60px, 500, 'go3v2');
+    color: $color-secondary-action;
+    line-height: 50px;
+    margin-bottom: 10px;
+  }
+
+  &__subtitle {
+    @include font(12px, 600);
+    color: $color-text;
+    margin-bottom: 10px;
+  }
+
+  &__bonus {
+    color: $color-text;
+  }
+
+  &__bonus-code {
+    color: $color-secondary-action;
+  }
+}
+
+.btn {
+  margin-bottom: 60px;
+}
+
+.features {
+  padding-top: 5rem;
+
+  &__block {
+    text-align: center;
+    @include font(14px, 400, 'Rubik');
+  }
+
+  &__img {
+    width: 150px;
+  }
+}

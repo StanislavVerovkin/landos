@@ -1,0 +1,81 @@
+@import "variables";
+
+@mixin font($size, $weight: null, $family: null) {
+  font-size: $size / $font-size-default * 1rem;
+  @if $weight != null {font-weight: $weight}
+  @if $family != null {font-family: $family}
+  @if $family == 'go3v2' {letter-spacing: 2px}
+}
+
+@mixin scrollbar() {
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 2px;
+    background-color: lighten($color-background, 5);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    width: 4px;
+    background-color: lighten($color-background, 2);
+  }
+}
+
+@mixin hideScrollBar() {
+  overflow-y: scroll;
+  -ms-overflow-style: none;  // IE 10+
+  overflow: -moz-scrollbars-none;  // Firefox old
+  scrollbar-width: none; /* Firefox new */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin retina {
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min--moz-device-pixel-ratio: 2),
+  only screen and (-o-min-device-pixel-ratio: 2/1),
+  only screen and (min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 192dpi),
+  only screen and (min-resolution: 2dppx) {
+    @content;
+  }
+}
+
+@mixin media-between($lower, $upper) {
+  @media (min-width: $lower) and (max-width: ($upper - 1)) {
+    @content;
+  }
+}
+
+@mixin media-below($breakpoint) {
+  @media (max-width: ($breakpoint - 1)) {
+    @content;
+  }
+}
+
+@mixin media-above($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin media-height-between($lower, $upper) {
+  @media (min-height: $lower) and (max-height: ($upper - 1)) {
+    @content;
+  }
+}
+
+@mixin media-height-below($breakpoint) {
+  @media (max-height: ($breakpoint - 1)) {
+    @content;
+  }
+}
+
+@mixin media-height-above($breakpoint) {
+  @media (min-height: $breakpoint) {
+    @content;
+  }
+}

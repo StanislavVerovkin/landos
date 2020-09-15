@@ -1,0 +1,32 @@
+// colors
+$color-primary: #ff4669;
+$color-primary-action: lighten($color-primary, 10);
+
+$color-secondary: #ffffff;
+$color-secondary-action: #ff4669;
+
+$color-focus: #d3ff07;
+
+$color-background: #000;
+$color-background-light: #242424;
+$color-background-payment-logo: #383737;
+$color-background-input: #edf1f5;
+
+$color-light: darken(#fff, 30);
+$color-dark: #200037;
+
+$color-text: #fff;
+$color-text-dark: #000;
+$color-text-light: #fff;
+
+$color-error: #F20000;
+$color-success: #4BB543;
+
+$font-size-default: 16px;
+
+// breakpoints
+$bp-xs: 536px;
+$bp-sm: 768px;
+$bp-md: 992px;
+$bp-ld: 1200px;
+$bp-xl: 1500px;
